@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div `
-    background-color: #02044A;
-    color: #FFF;
+    background-color: #EAEBED;
+    color: #2E424D;
     min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
 `;
 
 export const Area = styled.div`
@@ -21,7 +22,7 @@ export const Steps = styled.div`
 
 export const Sidebar = styled.div`
     width: 250px;
-    border-right: 1px solid #16195C;
+    border-right: 1px solid #2E424D;
 `;
 
 export const Page = styled.div `

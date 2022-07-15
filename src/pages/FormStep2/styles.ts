@@ -13,7 +13,7 @@ export const Container = styled.div `
     hr{
         height: 1px;
         border: 0;
-        background-color: #16195C;
+        background-color: #2E424D;
         margin: 30px 0;
     }
 
@@ -37,8 +37,8 @@ export const Container = styled.div `
     }
 
     button{
-        background-color: #25CD89;
-        color: #FFF;
+        background-color: #98DAD9;
+        color: #2E424D;
         font-size: 14px;
         font-weight: bold;
         padding: 20px 40px;
@@ -46,12 +46,24 @@ export const Container = styled.div `
         border-radius: 30px;
         cursor: pointer;
         margin-top: 30px;
+        box-shadow:  8px 8px 16px #c7c8c9,
+             -8px -8px 16px #ffffff;
+
+
     }
 
     .backButton {
-        font-size: 16px;
+        font-size: 12px;
+        z-index: -1;
         text-decoration: none;
-        padding: 20xp 40px;
-        color: #B8B8D4;
+        padding: 1.2rem;
+        padding-right: 4.5rem;
+        padding-bottom: 1.1rem;
+        color: #5B8291;
+        margin-right: -60px;
+        box-shadow:  8px 8px 16px #c7c8c9,
+             -8px -8px 16px #ffffff;
+
+        border-radius: 30px;
     }
 `;

@@ -2,13 +2,13 @@ import { useNavigate, Link } from 'react-router-dom';
 import * as C from './styles';
 import { useForm, FormActions } from '../../contexts/FormContext';
 import {Theme} from '../../components/Theme';
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { SelectOption } from '../../components/SelectOption';
 
 const FormStep2 = () => {
     const navigate = useNavigate();
     const { state, dispatch } = useForm();
-
+    const [firstName, setFirstName] = useState('');
     useEffect(() => {
         if(state.name === ''){
             navigate('/');
@@ -17,6 +17,8 @@ const FormStep2 = () => {
                 type: FormActions.setCurrentStep,
                 payload: 2
             })
+            const splited = state.name.split(" ");
+            setFirstName(splited[0]);
         }
     }, []);
 
@@ -38,7 +40,7 @@ const FormStep2 = () => {
         <Theme>
             <C.Container>
                 <p>Passo {state.currentStep}/3</p>
-                <h1>{state.name}, o que melhor descreve você?</h1>
+                <h1>{firstName}, o que melhor descreve você?</h1>
                 <p>Escolha a opção que melhor condiz com seu estado atual, profissionalmente</p>
                 <hr/>
                 <SelectOption

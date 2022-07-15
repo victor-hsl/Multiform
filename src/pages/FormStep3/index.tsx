@@ -2,13 +2,13 @@ import { useNavigate, Link } from 'react-router-dom';
 import * as C from './styles';
 import { useForm, FormActions } from '../../contexts/FormContext';
 import {Theme} from '../../components/Theme';
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 
 const FormStep3 = () => {
     const navigate = useNavigate();
     const { state, dispatch } = useForm();
-
+    const [firstName, setFirstName] = useState('');
     useEffect(() => {
         if(state.name === ''){
             navigate('/');
@@ -17,6 +17,8 @@ const FormStep3 = () => {
                 type: FormActions.setCurrentStep,
                 payload: 3
             })
+            const splited = state.name.split(" ");
+            setFirstName(splited[0]);
         }
     }, []);
     const handleNextStep = () => {
@@ -42,25 +44,27 @@ const FormStep3 = () => {
         <Theme>
             <C.Container>
                 <p>Passo {state.currentStep}/3</p>
-                <h1>Legal {state.name}, onde te achamos?</h1>
+                <h1>Legal {firstName}, onde te achamos?</h1>
                 <p>Preencha com seus contatos</p>
                 <hr/>
-                <label>
+                <label htmlFor='email'>
                     Qual seu e-mail?
+                </label>
                     <input
+                        id="email"
                         type="email"
                         value={state.email}
                         onChange={handleEmailChange}
                     />
-                </label>
-                <label>
+                <label htmlFor='github'>
                     Qual seu GitHub?
+                </label>
                     <input
+                        id="github"
                         type="url"
                         value={state.github}
                         onChange={handleGitHubChange}
                     />
-                </label>
                 <Link to="/step2" className="backButton">Voltar</Link>
                 <button onClick={handleNextStep}>Finalizar cadastro</button>
             </C.Container>

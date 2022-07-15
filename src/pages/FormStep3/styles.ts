@@ -20,28 +20,33 @@ export const Container = styled.div `
     label{
         font-size: 13px;
         display: block;
-        margin-bottom: 20px;
+        margin-left: 2rem;
+    }
+    input{
+        margin-top: 7px;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        padding-left: 2rem;
+        height: 60px;
+        border: 0px;
+        border-radius: 2rem;
+        color: #2E424D;
+        outline: 0;
+        font-size: 15px;
+        background-color: #EAEBED;
+        margin-bottom: 10px;
+        box-shadow: inset 8px 8px 10px #c7c8c9,
+        inset -8px -8px 10px #ffffff;
+    }
 
-        
-        input{
-            display: block;
-            margin-top: 7px;
-            box-sizing: border-box;
-            width: 100%;
-            height: 60px;
-            padding: 20xp 10px;
-            border: 2px solid #25CD89;
-            border-radius: 10px;
-            color: #FFF;
-            outline: 0;
-            font-size: 15px;
-            background-color: #02044A;
-        }
+    input:focus {
+        border: 2px solid #98DAD9;
     }
 
     button{
-        background-color: #25CD89;
-        color: #FFF;
+        background-color: #98DAD9;
+        color: #2E424D;
         font-size: 14px;
         font-weight: bold;
         padding: 20px 40px;
@@ -49,12 +54,23 @@ export const Container = styled.div `
         border-radius: 30px;
         cursor: pointer;
         margin-top: 30px;
+        box-shadow:  8px 8px 16px #c7c8c9,
+             -8px -8px 16px #ffffff;
+
     }
 
     .backButton {
-        font-size: 16px;
+        font-size: 12px;
+        z-index: -1;
         text-decoration: none;
-        padding: 20xp 40px;
-        color: #B8B8D4;
+        padding: 1.2rem;
+        padding-right: 4.5rem;
+        padding-bottom: 1.1rem;
+        color: #5B8291;
+        margin-right: -60px;
+        box-shadow:  8px 8px 16px #c7c8c9,
+             -8px -8px 16px #ffffff;
+
+        border-radius: 30px;
     }
 `;
